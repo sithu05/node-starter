@@ -11,6 +11,6 @@ module.exports = function (app) {
     });
 
     app.route('/api/me').get(passport.authenticate('jwt', { session: false }), function (req, res) {
-        res.send(req.user);
+        res.send({ user: req.user });
     });
 };
